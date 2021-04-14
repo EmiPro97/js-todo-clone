@@ -3,26 +3,48 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
 }
 
 body{
-    background: orange;
+    background: linear-gradient(180deg, #000346 0%, #FF0000 100%), linear-gradient(58.72deg, #0029FF 0%, #AA0014 100%), radial-gradient(100% 164.72% at 100% 100%, #FF00A8 0%, #00FF47 100%), radial-gradient(100% 148.07% at 0% 0%, #FFF500 0%, #51D500 100%);
+    background-blend-mode: overlay, overlay, difference, normal;
+    color: #4beefa;
 }
 
 
 /* UTILITIES */
 
 /* Layout */
+.full-screen-wrap{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .wrapper{
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+    background-image: linear-gradient(45deg, #030d22, 40%, #1c1347);
+    width: 500px;
+    max-width: 500px;
+    height: 700px;
+    max-height: 700px;
+    padding: 70px 40px 0 40px;
+    border: 1px solid #ee0077;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 7px rgba(238, 0, 119, 0.3)
+}
+
+/* Text */
+.line-through{
+    text-decoration: line-through;
 }
 
 
 /* HEADER */
 h1{
-    margin-bottom: 30px;
+    margin-bottom: 70px;
     font-size: 50px;
     text-align: center;
 }
@@ -38,7 +60,7 @@ h1{
     border: none;
     outline: none;
     border-radius: 5px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 5px 5px rgba(238, 0, 119, 0.5);
     background-color: #ffffffcf;
     transition: background 0.4s;
 }
@@ -50,10 +72,15 @@ h1{
 
 
 /* List elements */
+.toDo-list{
+    max-height: 350px;
+    overflow: auto;
+}
+
 .toDo-list li{
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #ee0077;
     padding-bottom: 10px;
     margin-bottom: 10px;
 }
@@ -64,10 +91,18 @@ h1{
     border: none;
 }
 
+.toDo-list li .text{
+    cursor: pointer;
+}
+
 .toDo-list li i{
     opacity: 0.5;
     cursor: pointer;
     transition: opacity 0.4s;
+}
+
+.toDo-list li i:first-child{
+    margin-right: 5px;
 }
 
 .toDo-list li i:hover{

@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Font -->
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
     <!-- Icons -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' integrity='sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==' crossorigin='anonymous'/>
 
@@ -19,30 +24,33 @@
     <title>To Do List</title>
 </head>
 <body>
-    <div class="wrapper">
-
-        <!-- HEADER -->
-        <header>
-            <h1>ToDo List</h1>
-        </header>
-
-        <!-- MAIN -->
-        <main>
-            <!-- Element to add -->
-            <input type="text" class="add-to-list" placeholder="Inserisci una task">
-            
-            <!-- List -->
-            <ul class="toDo-list"></ul>
-        </main>
+    <div class="full-screen-wrap">
+        <div class="wrapper">
+            <!-- HEADER -->
+            <header>
+                <h1>To Do List</h1>
+            </header>
+            <!-- MAIN -->
+            <main>
+                <!-- Element to add -->
+                <input type="text" class="add-to-list" placeholder="Inserisci una task">
+        
+                <!-- List -->
+                <ul class="toDo-list"></ul>
+            </main>
+        </div>
+    </div>
 
         <!-- TEMPLATE -->
         <div id="template" style="display: none;">
             <li>
                 <span class="text"></span>
-                <i class="fas fa-trash-alt"></i>
+                <div>
+                    <i class="fas fa-check"></i>
+                    <i class="fas fa-trash-alt"></i>
+                </div>    
             </li>
         </div>
-    </div>
     
 </body>
 </html>

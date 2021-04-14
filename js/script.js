@@ -11,18 +11,23 @@ $(document).ready(function() {
     var listItems = [
         {
             toDoItem: 'Fare la spesa',
+            done: false,
         },
         {
             toDoItem: 'Portare fuori il cane',
+            done: false,
         },
         {
             toDoItem: 'Fare l\'esercitazione pomeridiana',
+            done: true,
         },
         {
             toDoItem: 'Fare lezione',
+            done: false,
         },
         {
             toDoItem: 'Pagare la rata boolean',
+            done: true,
         },
     ];
 
@@ -40,6 +45,10 @@ $(document).ready(function() {
         myClone = template.clone();
         myClone.find('.text').text(listItems[i].toDoItem);
         
+        if (listItems[i].done) {
+            myClone.find('.text').addClass('line-through');
+        }
+
         // Adding to list
         list.append(myClone);
     }
@@ -69,8 +78,18 @@ $(document).ready(function() {
     
     
     // 3. Remove list item on icon click
-    $('body').on('click', '.toDo-list li i', function(){
-        $(this).parent().remove();
+    $('body').on('click', '.toDo-list li i:last-child', function(){
+        $(this).parent().parent('li').remove();
+    });
+
+
+    // 4. Line-through the done task on click
+    $('body').on('click', '.toDo-list li .text', function(){
+        $(this).toggleClass('line-through');
+    });
+
+    $('body').on('click', '.toDo-list li i:first-child', function(){
+        $(this).parent().prev('.text').toggleClass('line-through');
     });
 
 
